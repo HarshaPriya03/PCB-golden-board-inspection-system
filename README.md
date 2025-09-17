@@ -1,4 +1,7 @@
 git config --global http.postBuffer 524288000  # 500MB
+
+
+
 git config --global http.maxRequestBuffer 1000000000  # 1GB (if supported)
 
 
