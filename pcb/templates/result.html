@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Result - PCB Comparator</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+
+<div class="container mt-5 text-center">
+  <h2 class="mb-4">📊 Comparison Result</h2>
+  
+  <div class="card shadow p-3">
+    <h5 class="text-danger">Missing Components:</h5>
+    {% if missing %}
+      <ul class="list-group">
+        {% for comp in missing %}
+          <li class="list-group-item">{{ comp }}</li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p class="text-success">✅ No missing components detected</p>
+    {% endif %}
+  </div>
+
+  <div class="mt-4">
+    <img src="{{ url_for('static', filename='uploads/' + result_image) }}" class="img-fluid border rounded">
+  </div>
+
+  <a href="/" class="btn btn-secondary mt-3">🔄 Compare Again</a>
+</div>
+
+</body>
+</html>
